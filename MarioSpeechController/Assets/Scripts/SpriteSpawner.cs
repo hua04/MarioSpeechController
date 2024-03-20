@@ -54,6 +54,7 @@ public class SpriteSpawner : MonoBehaviour
                     if (Vector2.Distance(clone.transform.position, yellowHit.position) < 1f)
                     {
                         Debug.Log("Yellow, A");
+                        Destroy(clone);
                     }
                 }
 
@@ -64,6 +65,7 @@ public class SpriteSpawner : MonoBehaviour
                     if (Vector2.Distance(clone.transform.position, redHit.position) < 1f)
                     {
                         Debug.Log("Red, S");
+                        Destroy(clone);
                     }
                 }
 
@@ -73,6 +75,7 @@ public class SpriteSpawner : MonoBehaviour
                     if (Vector2.Distance(clone.transform.position, blueHit.position) < 1f)
                     {
                         Debug.Log("Blue, D");
+                        Destroy(clone);
                     }
                 }
 
@@ -81,6 +84,7 @@ public class SpriteSpawner : MonoBehaviour
                     if (Vector2.Distance(clone.transform.position, greenHit.position) < 1f)
                     {
                         Debug.Log("Green, F");
+                        Destroy(clone);
                     }
                 }
 
