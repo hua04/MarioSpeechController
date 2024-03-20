@@ -897,7 +897,11 @@ MonoBehaviour:
   - {fileID: 65096663}
   - {fileID: 989470894}
   - {fileID: 776296105}
-  spawnInterval: 1
+  spawnInterval: 2
+  yellowHit: {fileID: 1101317301}
+  redHit: {fileID: 302232657}
+  blueHit: {fileID: 1317564888}
+  greenHit: {fileID: 404943501}
 --- !u!4 &744136536
 Transform:
   m_ObjectHideFlags: 0
