@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpriteSpawner : MonoBehaviour
 {
@@ -15,7 +16,17 @@ public class SpriteSpawner : MonoBehaviour
     public Transform blueHit;
     public Transform greenHit;
 
-    private List<GameObject> spawnedSprites = new List<GameObject>(); // List to store spawned sprite clones
+    private List<GameObject> spawnedSprites = new List<GameObject>();
+
+    private int Yscore = 0;
+    private int Rscore = 0;
+    private int Bscore = 0;
+    private int Gscore = 0;
+
+    public TMP_Text YscoreText;
+    public TMP_Text RscoreText;
+    public TMP_Text BscoreText;
+    public TMP_Text GscoreText;
 
     void Update()
     {
@@ -51,8 +62,9 @@ public class SpriteSpawner : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A))
                 {
 
-                    if (Vector2.Distance(clone.transform.position, yellowHit.position) < 1f)
+                    if (Vector2.Distance(clone.transform.position, yellowHit.position) < 0.8f)
                     {
+                        Yscore += 1;
                         Debug.Log("Yellow, A");
                         Destroy(clone);
                     }
@@ -62,8 +74,9 @@ public class SpriteSpawner : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S))
                 {
 
-                    if (Vector2.Distance(clone.transform.position, redHit.position) < 1f)
+                    if (Vector2.Distance(clone.transform.position, redHit.position) < 0.8f)
                     {
+                        Rscore += 1;
                         Debug.Log("Red, S");
                         Destroy(clone);
                     }
@@ -72,8 +85,9 @@ public class SpriteSpawner : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.D))
                 {
 
-                    if (Vector2.Distance(clone.transform.position, blueHit.position) < 1f)
+                    if (Vector2.Distance(clone.transform.position, blueHit.position) < 0.8f)
                     {
+                        Bscore += 1;
                         Debug.Log("Blue, D");
                         Destroy(clone);
                     }
@@ -81,16 +95,21 @@ public class SpriteSpawner : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    if (Vector2.Distance(clone.transform.position, greenHit.position) < 1f)
+                    if (Vector2.Distance(clone.transform.position, greenHit.position) < 0.8f)
                     {
+                        Gscore += 1;
                         Debug.Log("Green, F");
                         Destroy(clone);
                     }
                 }
-
               
             }
         }
+
+        YscoreText.text = "Y: " + Yscore;
+        RscoreText.text = "R: " + Rscore;
+        BscoreText.text = "B: " + Bscore;
+        GscoreText.text = "G: " + Gscore;
 
     }
 }
