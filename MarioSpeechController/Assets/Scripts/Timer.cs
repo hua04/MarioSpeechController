@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
     //call this on update
     public void UpdateTimerUI()
     {
-        Debug.Log(count);
+        //Debug.Log(count);
 
         //set timer UI
         secondsCount -= Time.deltaTime;
