@@ -18,10 +18,10 @@ public class SpriteSpawner : MonoBehaviour
 
     private List<GameObject> spawnedSprites = new List<GameObject>();
 
-    private int Yscore = 0;
-    private int Rscore = 0;
-    private int Bscore = 0;
-    private int Gscore = 0;
+    private int Yscore = 10;
+    private int Rscore = 16;
+    private int Bscore = 4;
+    private int Gscore = 8;
 
     public TMP_Text YscoreText;
     public TMP_Text RscoreText;
@@ -64,7 +64,7 @@ public class SpriteSpawner : MonoBehaviour
 
                     if (Vector2.Distance(clone.transform.position, yellowHit.position) < 0.8f)
                     {
-                        Yscore += 1;
+                        Yscore += 2;
                         Debug.Log("Yellow, A");
                         Destroy(clone);
                     }
@@ -76,7 +76,7 @@ public class SpriteSpawner : MonoBehaviour
 
                     if (Vector2.Distance(clone.transform.position, redHit.position) < 0.8f)
                     {
-                        Rscore += 1;
+                        Rscore += 2;
                         Debug.Log("Red, S");
                         Destroy(clone);
                     }
@@ -87,7 +87,7 @@ public class SpriteSpawner : MonoBehaviour
 
                     if (Vector2.Distance(clone.transform.position, blueHit.position) < 0.8f)
                     {
-                        Bscore += 1;
+                        Bscore += 2;
                         Debug.Log("Blue, D");
                         Destroy(clone);
                     }
@@ -97,7 +97,7 @@ public class SpriteSpawner : MonoBehaviour
                 {
                     if (Vector2.Distance(clone.transform.position, greenHit.position) < 0.8f)
                     {
-                        Gscore += 1;
+                        Gscore += 2;
                         Debug.Log("Green, F");
                         Destroy(clone);
                     }
@@ -106,10 +106,10 @@ public class SpriteSpawner : MonoBehaviour
             }
         }
 
-        YscoreText.text = "Y: " + Yscore;
-        RscoreText.text = "R: " + Rscore;
-        BscoreText.text = "B: " + Bscore;
-        GscoreText.text = "G: " + Gscore;
+        YscoreText.text = "Y: " + Yscore + "%";
+        RscoreText.text = "R: " + Rscore + "%";
+        BscoreText.text = "B: " + Bscore + "%";
+        GscoreText.text = "G: " + Gscore + "%";
 
     }
 }
