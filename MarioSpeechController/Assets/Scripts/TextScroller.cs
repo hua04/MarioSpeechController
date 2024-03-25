@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TextScroller : MonoBehaviour
 {
+    public AudioCheck audioCheck;
+
     [SerializeField][TextArea] private string[] script;
     [SerializeField] private float textSpeed = 0.01f;
 
@@ -31,7 +33,7 @@ public class TextScroller : MonoBehaviour
         if (currentText < script.Length - 1 && textDone == true)
         {
             continueText.SetBool("Continue",true);
-            if (Input.GetKeyDown(KeyCode.A))
+            if (audioCheck.yellow == true)
             {
                 scriptText.text = "";
                 textDone = false;
@@ -45,7 +47,7 @@ public class TextScroller : MonoBehaviour
         if (currentText >= script.Length - 1 && textDone == true)
         {
            speechText.SetBool("Visible", true);
-            if (Input.GetKeyDown(KeyCode.A))
+            if (audioCheck.yellow == true)
             {
                 SceneManager.LoadScene("Calibration");
                 speechText.SetBool("Visible", false);

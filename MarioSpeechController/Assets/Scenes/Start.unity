@@ -272,9 +272,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press [A] to start
+  m_text: 'Press [YELLOW] to start
 
-    Press [S] for instructions'
+    Press [RED] for instructions'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6603ae3466af4311844616399ba9629, type: 2}
   m_sharedMaterial: {fileID: -8927709690502503578, guid: f6603ae3466af4311844616399ba9629, type: 2}
@@ -408,9 +408,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press [A] to start
+  m_text: 'Press [YELLOW] to start
 
-    Press [S] for instructions'
+    Press [RED] for instructions'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6603ae3466af4311844616399ba9629, type: 2}
   m_sharedMaterial: {fileID: -8927709690502503578, guid: f6603ae3466af4311844616399ba9629, type: 2}
@@ -956,6 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dca0881e6a7bb645a9396a4e39acebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioCheck: {fileID: 1245391448}
   nextScene: Calibration
   otherScene: Instructions
 --- !u!4 &1780511291

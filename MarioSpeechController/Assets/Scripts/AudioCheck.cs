@@ -5,28 +5,43 @@ using System.IO.Ports;
 
 public class AudioCheck : MonoBehaviour
 {
-    SerialPort serialPort;
+    public SerialPort serialPort;
+
+    //public TimerCalibration timerCalibration;
+
     public int audioLevel;
     public bool yellow;
     public bool red;
     public bool blue;
     public bool green;
 
+
     void Start()
     {
+        //currentScene = SceneManager.GetActiveScene();
+        DontDestroyOnLoad(this);
         serialPort = new SerialPort("COM3", 9600);
         serialPort.Open();
     }
 
     void Update()
     {
+
+
+        ButtonAndAudio();
+
+
+    }
+
+    public void ButtonAndAudio()
+    {
         if (serialPort.IsOpen)
         {
-            
+
             try
             {
                 string data = serialPort.ReadLine();
-                print(data);
+                //print(data);
                 //sensorValue = int.Parse(data);
                 if (data[0].ToString() == "A")//If its audio data
                 {
@@ -34,13 +49,15 @@ public class AudioCheck : MonoBehaviour
                     audioLevel = int.Parse(result);
 
                     //put audio variable update here
-                } else if (data[0].ToString() == "B")
+                }
+                else if (data[0].ToString() == "B")
                 {
                     //if its button data
                     if (data[1].ToString() == "1")
                     {
                         yellow = false;
-                    } else
+                    }
+                    else
                     {
                         yellow = true;
                     }
@@ -48,7 +65,8 @@ public class AudioCheck : MonoBehaviour
                     if (data[3].ToString() == "1")
                     {
                         red = false;
-                    } else
+                    }
+                    else
                     {
                         red = true;
                     }
@@ -69,8 +87,8 @@ public class AudioCheck : MonoBehaviour
                         green = true;
                     }
                 }
-              
-                    Debug.Log( yellow +", "+ red + ", " + blue + ", " + green);
+
+                //Debug.Log( yellow +", "+ red + ", " + blue + ", " + green);
 
 
             }
@@ -79,10 +97,7 @@ public class AudioCheck : MonoBehaviour
                 // Handle exceptions
             }
 
-          
+
         }
-
-       
-
     }
 }
