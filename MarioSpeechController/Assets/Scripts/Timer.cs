@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     private int minuteCount = 1;
     public static float count=60;
 
+    public SpriteSpawner spriteSpawner;
+
 
     private void Start()
     {
@@ -20,9 +22,12 @@ public class Timer : MonoBehaviour
     {
         UpdateTimerUI();
 
-        if (count <= 0)
+        if (count <= 0 && spriteSpawner.avgScore>=20 )
         {
-            SceneManager.LoadScene("Ending");
+            SceneManager.LoadScene("Win");
+        }else if (count <= 0 && spriteSpawner.avgScore < 20)
+        {
+            SceneManager.LoadScene("Lose");
         }
     }
 
