@@ -18,10 +18,12 @@ public class SpriteSpawner : MonoBehaviour
 
     private List<GameObject> spawnedSprites = new List<GameObject>();
 
-    private int Yscore = 10;
-    private int Rscore = 16;
-    private int Bscore = 4;
-    private int Gscore = 8;
+    public int Yscore = 10;
+    public int Rscore = 16;
+    public int Bscore = 4;
+    public int Gscore = 8;
+    public int totalScore;
+    public int avgScore;
 
     public TMP_Text YscoreText;
     public TMP_Text RscoreText;
@@ -110,6 +112,8 @@ public class SpriteSpawner : MonoBehaviour
         RscoreText.text = "R: " + Rscore + "%";
         BscoreText.text = "B: " + Bscore + "%";
         GscoreText.text = "G: " + Gscore + "%";
-
+        totalScore = Gscore + Bscore + Rscore + Yscore;
+        avgScore = totalScore / 4;
+        //Debug.Log(avgScore);
     }
 }
