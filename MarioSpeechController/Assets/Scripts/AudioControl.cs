@@ -15,10 +15,15 @@ public class AudioControl : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
+        audioCheck = GetComponent<AudioCheck>();
     }
 
     void Update()
     {
+        if (audioCheck == null)
+        {
+            audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
+        }
         if (SceneManager.GetActiveScene().name == "Gameplay")
         {
             if (audioCheck.audioLevel > lowerAvg)

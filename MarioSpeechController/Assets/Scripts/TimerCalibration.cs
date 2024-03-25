@@ -28,8 +28,9 @@ public class TimerCalibration : MonoBehaviour
     private void Start()
     {
         //DontDestroyOnLoad(this);
+        audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
+        audioControl = GameObject.Find("AudioControl").GetComponent<AudioControl>();
 
-      
 
     }
     void Update()
@@ -83,7 +84,7 @@ public class TimerCalibration : MonoBehaviour
             }
 
             average = addedUp / values.Count;
-            lowerAvg = average - 10;
+            lowerAvg = average + 5;
             upperAvg = average + 10;
             Debug.Log("average: " + average);
             getVolumeAvg();

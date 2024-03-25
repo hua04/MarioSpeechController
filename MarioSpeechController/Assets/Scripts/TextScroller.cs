@@ -23,6 +23,7 @@ public class TextScroller : MonoBehaviour
   
     public void Start()
     {
+        audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
         StartCoroutine(AnimateText());
         
         
