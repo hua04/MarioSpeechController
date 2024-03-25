@@ -262,8 +262,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f53dd8b5ae5465ea6624db8db791f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioCheck: {fileID: 0}
+  audioControl: {fileID: 1441695324}
   timerText: {fileID: 41542566}
   timerTextHide: {fileID: 41542564}
+  values: 
+  addedUp: 0
+  average: 0
+  lowerAvg: 0
+  upperAvg: 0
 --- !u!222 &41542568
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -421,8 +428,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Please press "F" and speak in the microphone for 10 seconds at the volume
-    you will speak at.
+  m_text: Please press [GREEN] and speak in the microphone for 10 seconds at the
+    volume you will speak at.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6603ae3466af4311844616399ba9629, type: 2}
   m_sharedMaterial: {fileID: -8927709690502503578, guid: f6603ae3466af4311844616399ba9629, type: 2}
@@ -958,7 +965,7 @@ RectTransform:
   m_AnchoredPosition: {x: 324.57016, y: 182.47807}
   m_SizeDelta: {x: 666.8596, y: 375.0438}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1605430912
+--- !u!1 &1441695323
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -966,88 +973,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1605430914}
-  - component: {fileID: 1605430913}
+  - component: {fileID: 1441695325}
+  - component: {fileID: 1441695324}
   m_Layer: 0
-  m_Name: Arduino
+  m_Name: AudioControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1605430913
+--- !u!114 &1441695324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605430912}
+  m_GameObject: {fileID: 1441695323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6ece3be4d2f4a839edef38c1faf7d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c40834b7d5ba1a418182ffe9ee4bd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLevel: 0
-  yellow: 0
-  red: 0
-  blue: 0
-  green: 0
---- !u!4 &1605430914
+  audioCheck: {fileID: 0}
+  average: 0
+  lowerAvg: 0
+  upperAvg: 0
+  speaking: 0
+--- !u!4 &1441695325
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605430912}
+  m_GameObject: {fileID: 1441695323}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.402275, y: 1194.0963, z: -6.6789846}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1990312269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1990312271}
-  - component: {fileID: 1990312270}
-  m_Layer: 0
-  m_Name: SceneChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1990312270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990312269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dca0881e6a7bb645a9396a4e39acebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: Gameplay
-  otherScene: 
---- !u!4 &1990312271
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990312269}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -82.22369, y: 42.7511, z: -10.555283}
+  m_LocalPosition: {x: 450.36435, y: 155.908, z: 1.0048839}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,6 +1089,5 @@ SceneRoots:
   - {fileID: 104769097}
   - {fileID: 2075527565}
   - {fileID: 1205430388}
-  - {fileID: 1990312271}
   - {fileID: 673823265}
-  - {fileID: 1605430914}
+  - {fileID: 1441695325}

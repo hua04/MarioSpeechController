@@ -22,10 +22,10 @@ public class Timer : MonoBehaviour
     {
         UpdateTimerUI();
 
-        if (count <= 0 && spriteSpawner.avgScore>=20 )
+        if (count <= 0 && spriteSpawner.avgScore>=30 )
         {
             SceneManager.LoadScene("Win");
-        }else if (count <= 0 && spriteSpawner.avgScore < 20)
+        }else if (count <= 0 && spriteSpawner.avgScore < 30)
         {
             SceneManager.LoadScene("Lose");
         }

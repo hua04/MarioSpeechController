@@ -5,6 +5,9 @@ using TMPro;
 
 public class SpriteSpawner : MonoBehaviour
 {
+    public AudioCheck audioCheck;
+    public AudioControl audioControl;
+
     public GameObject spritePrefab; // sprite itself
     public Transform[] lanes; // amount of lanes (4)
 
@@ -30,6 +33,11 @@ public class SpriteSpawner : MonoBehaviour
     public TMP_Text BscoreText;
     public TMP_Text GscoreText;
 
+    void Start()
+    {
+        audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
+        audioControl= GameObject.Find("AudioControl").GetComponent<AudioControl>();
+    }
     void Update()
     {
         spawnTimer += Time.deltaTime;
@@ -61,45 +69,45 @@ public class SpriteSpawner : MonoBehaviour
             {
             if (clone != null)
             {
-                if (Input.GetKeyDown(KeyCode.A))
+                if (audioCheck.yellow == true && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, yellowHit.position) < 0.8f)
                     {
-                        Yscore += 2;
+                        Yscore += 4;
                         Debug.Log("Yellow, A");
                         Destroy(clone);
                     }
                 }
 
 
-                if (Input.GetKeyDown(KeyCode.S))
+                if (audioCheck.red == true && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, redHit.position) < 0.8f)
                     {
-                        Rscore += 2;
+                        Rscore += 4;
                         Debug.Log("Red, S");
                         Destroy(clone);
                     }
                 }
 
-                if (Input.GetKeyDown(KeyCode.D))
+                if (audioCheck.blue == true && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, blueHit.position) < 0.8f)
                     {
-                        Bscore += 2;
+                        Bscore += 4;
                         Debug.Log("Blue, D");
                         Destroy(clone);
                     }
                 }
 
-                if (Input.GetKeyDown(KeyCode.F))
+                if (audioCheck.green == true && audioControl.speaking)
                 {
                     if (Vector2.Distance(clone.transform.position, greenHit.position) < 0.8f)
                     {
-                        Gscore += 2;
+                        Gscore += 4;
                         Debug.Log("Green, F");
                         Destroy(clone);
                     }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public AudioCheck audioCheck;
+
     public string nextScene;
     public string otherScene;
     void Start()
@@ -15,11 +17,15 @@ public class SceneChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && nextScene != "None")
+        if (audioCheck == null)
+        {
+            audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
+        }
+        if (audioCheck.yellow == true && nextScene != "None")
         {
             SceneChange(nextScene);
         }
-        if (Input.GetKeyDown(KeyCode.S)&& otherScene!= "None")
+        if (audioCheck.red == true && otherScene!= "None")
         {
             SceneChange(otherScene);
         }
@@ -27,6 +33,11 @@ public class SceneChanger : MonoBehaviour
 
     public void SceneChange(string sceneName) 
     {
+        if (sceneName == "Start")
+        {
+            Destroy(GameObject.Find("Arduino"));
+        }
         SceneManager.LoadScene(sceneName);
+        
     }
 }
