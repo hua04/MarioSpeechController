@@ -47,7 +47,7 @@ public class TextScroller : MonoBehaviour
            speechText.SetBool("Visible", true);
             if (Input.GetKeyDown(KeyCode.A))
             {
-                SceneManager.LoadScene("Gameplay");
+                SceneManager.LoadScene("Calibration");
                 speechText.SetBool("Visible", false);
             }
         }
