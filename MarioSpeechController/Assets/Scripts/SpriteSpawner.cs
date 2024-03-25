@@ -114,6 +114,6 @@ public class SpriteSpawner : MonoBehaviour
         GscoreText.text = "G: " + Gscore + "%";
         totalScore = Gscore + Bscore + Rscore + Yscore;
         avgScore = totalScore / 4;
-        Debug.Log(avgScore);
+        //Debug.Log(avgScore);
     }
 }
