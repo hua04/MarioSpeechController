@@ -247,7 +247,7 @@ MonoBehaviour:
     speak into the mic as the incoming words hit the target in order to deliver her
     thoughts convincingly.\n\n Try to gain and maintain approval of all the groups
     before the timer runs out. "
-  textSpeed: 0.05
+  textSpeed: 0.001
   scriptText: {fileID: 319775865}
   continueText: {fileID: 1337099169}
   speechText: {fileID: 532595895}

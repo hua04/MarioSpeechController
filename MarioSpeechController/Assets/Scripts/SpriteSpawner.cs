@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class SpriteSpawner : MonoBehaviour
 {
@@ -19,6 +18,11 @@ public class SpriteSpawner : MonoBehaviour
     public Transform blueHit;
     public Transform greenHit;
 
+    public bool yellowOn;
+    public bool redOn;
+    public bool blueOn;
+    public bool greenOn;
+
     private List<GameObject> spawnedSprites = new List<GameObject>();
 
     public int Yscore = 10;
@@ -33,10 +37,19 @@ public class SpriteSpawner : MonoBehaviour
     public TMP_Text BscoreText;
     public TMP_Text GscoreText;
 
+    public GameObject yellowSelect;
+    public GameObject redSelect;
+    public GameObject blueSelect;
+    public GameObject greenSelect;
+
     void Start()
     {
         audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
-        audioControl= GameObject.Find("AudioControl").GetComponent<AudioControl>();
+        audioControl = GameObject.Find("AudioControl").GetComponent<AudioControl>();
+        yellowSelect.SetActive(false);
+        redSelect.SetActive(false);
+        blueSelect.SetActive(false);
+        greenSelect.SetActive(false);
     }
     void Update()
     {
@@ -64,12 +77,60 @@ public class SpriteSpawner : MonoBehaviour
             spawnedSprites.Add(newSprite);
         }
 
-      
-            foreach (GameObject clone in spawnedSprites)
-            {
+        if (audioCheck.yellow == true)
+        {
+            yellowOn = true;
+            redOn=false;
+            blueOn = false;
+            greenOn = false;
+            yellowSelect.SetActive(true);
+            redSelect.SetActive(false);
+            blueSelect.SetActive(false);
+            greenSelect.SetActive(false);
+
+        }
+        if (audioCheck.red == true)
+        {
+            yellowOn = false;
+            redOn = true;
+            blueOn = false;
+            greenOn = false;
+            yellowSelect.SetActive(false);
+            redSelect.SetActive(true);
+            blueSelect.SetActive(false);
+            greenSelect.SetActive(false);
+
+        }
+        if (audioCheck.blue == true)
+        {
+            yellowOn = false;
+            redOn = false;
+            blueOn = true;
+            greenOn = false;
+            yellowSelect.SetActive(false);
+            redSelect.SetActive(false);
+            blueSelect.SetActive(true);
+            greenSelect.SetActive(false);
+
+        }
+        if (audioCheck.green == true)
+        {
+            yellowOn = false;
+            redOn = false;
+            blueOn = false;
+            greenOn = true;
+            yellowSelect.SetActive(false);
+            redSelect.SetActive(false);
+            blueSelect.SetActive(false);
+            greenSelect.SetActive(true);
+
+        }
+
+        foreach (GameObject clone in spawnedSprites)
+        {
             if (clone != null)
             {
-                if (audioCheck.yellow == true && audioControl.speaking)
+                if (yellowOn && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, yellowHit.position) < 0.8f)
@@ -81,7 +142,7 @@ public class SpriteSpawner : MonoBehaviour
                 }
 
 
-                if (audioCheck.red == true && audioControl.speaking)
+                if (redOn == true && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, redHit.position) < 0.8f)
@@ -92,7 +153,7 @@ public class SpriteSpawner : MonoBehaviour
                     }
                 }
 
-                if (audioCheck.blue == true && audioControl.speaking)
+                if (blueOn == true && audioControl.speaking)
                 {
 
                     if (Vector2.Distance(clone.transform.position, blueHit.position) < 0.8f)
@@ -103,7 +164,7 @@ public class SpriteSpawner : MonoBehaviour
                     }
                 }
 
-                if (audioCheck.green == true && audioControl.speaking)
+                if (greenOn == true && audioControl.speaking)
                 {
                     if (Vector2.Distance(clone.transform.position, greenHit.position) < 0.8f)
                     {
@@ -112,7 +173,7 @@ public class SpriteSpawner : MonoBehaviour
                         Destroy(clone);
                     }
                 }
-              
+
             }
         }
 
