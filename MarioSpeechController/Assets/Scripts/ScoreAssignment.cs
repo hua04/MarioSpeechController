@@ -15,8 +15,8 @@ public class ScoreAssignment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText1.text = "Goomba Approval: " + scoreScript.g + "%\r\nCheepCheep Approval: " + scoreScript.b + "%\r\nToad Approval: " + scoreScript.y + "%\r\nKoopa Approval: " + scoreScript.b + "%";
-        scoreText2.text = "Goomba Approval: " + scoreScript.g + "%\r\nCheepCheep Approval: " + scoreScript.b + "%\r\nToad Approval: " + scoreScript.y + "%\r\nKoopa Approval: " + scoreScript.b + "%";
+        scoreText1.text = "Goomba Approval: " + scoreScript.g + "%\r\nCheepCheep Approval: " + scoreScript.r + "%\r\nToad Approval: " + scoreScript.y + "%\r\nKoopa Approval: " + scoreScript.b + "%";
+        scoreText2.text = "Goomba Approval: " + scoreScript.g + "%\r\nCheepCheep Approval: " + scoreScript.r + "%\r\nToad Approval: " + scoreScript.y + "%\r\nKoopa Approval: " + scoreScript.b + "%";
 
     }
 }

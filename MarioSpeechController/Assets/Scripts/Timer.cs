@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         //DontDestroyOnLoad(this);
+        count = 60;
 
     }
     void Update()

@@ -30,6 +30,14 @@ public class TextScroller : MonoBehaviour
     }
     void Update()
     {
+        if (currentText == 0)
+        {
+            scriptText.fontSize = 25;
+        }
+        if (currentText == 1)
+        {
+            scriptText.fontSize = 22;
+        }
 
         if (currentText < script.Length - 1 && textDone == true)
         {

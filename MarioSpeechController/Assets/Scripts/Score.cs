@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,9 +35,9 @@ public class Score : MonoBehaviour
 
         }
 
-            if (SceneManager.GetActiveScene().name== "Start")
+        if (SceneManager.GetActiveScene().name == "Start")
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
     }
