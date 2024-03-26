@@ -35,9 +35,13 @@ public class SceneChanger : MonoBehaviour
     {
         if (sceneName == "Start")
         {
+            audioCheck.serialPort.Close();
             Destroy(GameObject.Find("Arduino"));
         }
+      
         SceneManager.LoadScene(sceneName);
         
     }
+
+   
 }

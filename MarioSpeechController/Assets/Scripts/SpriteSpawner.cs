@@ -47,6 +47,10 @@ public class SpriteSpawner : MonoBehaviour
 
     void Start()
     {
+        Yscore = 10;
+        Rscore = 16;
+        Bscore = 4;
+        Gscore = 8;
         audioCheck = GameObject.Find("Arduino").GetComponent<AudioCheck>();
         audioControl = GameObject.Find("AudioControl").GetComponent<AudioControl>();
         yellowSelect.SetActive(false);
@@ -92,7 +96,7 @@ public class SpriteSpawner : MonoBehaviour
         if (audioCheck.yellow == true)
         {
             yellowOn = true;
-            redOn=false;
+            redOn = false;
             blueOn = false;
             greenOn = false;
             yellowSelect.SetActive(true);
