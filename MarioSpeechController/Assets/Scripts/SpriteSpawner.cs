@@ -12,6 +12,9 @@ public class SpriteSpawner : MonoBehaviour
 
     public float spawnInterval = 1f; // interval between spawning sprites
     private float spawnTimer = 0f;
+    public SpriteRenderer peachSprite;
+    public Sprite talking;
+    public Sprite notTalking;
 
     public Transform yellowHit;
     public Transform redHit;
@@ -54,6 +57,15 @@ public class SpriteSpawner : MonoBehaviour
     void Update()
     {
         spawnTimer += Time.deltaTime;
+
+        if (audioControl.speaking)
+        {
+            peachSprite.sprite = talking;
+        }
+        else
+        {
+            peachSprite.sprite = notTalking;
+        }
 
         if (spawnTimer >= spawnInterval)
         {
@@ -177,10 +189,10 @@ public class SpriteSpawner : MonoBehaviour
             }
         }
 
-        YscoreText.text = "Y: " + Yscore + "%";
-        RscoreText.text = "R: " + Rscore + "%";
-        BscoreText.text = "B: " + Bscore + "%";
-        GscoreText.text = "G: " + Gscore + "%";
+        YscoreText.text = "Toad: " + Yscore + "%";
+        RscoreText.text = "Cheep: " + Rscore + "%";
+        BscoreText.text = "Koopa: " + Bscore + "%";
+        GscoreText.text = "Goomba: " + Gscore + "%";
         totalScore = Gscore + Bscore + Rscore + Yscore;
         avgScore = totalScore / 4;
         //Debug.Log(avgScore);

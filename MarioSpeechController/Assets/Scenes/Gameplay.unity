@@ -515,7 +515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -656.1101, y: 473}
+  m_AnchoredPosition: {x: -16, y: 473}
   m_SizeDelta: {x: 386.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163256612
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Y: 10%'
+  m_text: 'Toad: 10%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6603ae3466af4311844616399ba9629, type: 2}
   m_sharedMaterial: {fileID: -8927709690502503578, guid: f6603ae3466af4311844616399ba9629, type: 2}
@@ -898,7 +898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 612.6195, y: 473}
+  m_AnchoredPosition: {x: 558, y: 473}
   m_SizeDelta: {x: 386.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387112157
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'B: 4%
+  m_text: 'Koopa: 4%
 
 '
   m_isRightToLeft: 0
@@ -1509,6 +1509,9 @@ MonoBehaviour:
   - {fileID: 989470894}
   - {fileID: 776296105}
   spawnInterval: 2
+  peachSprite: {fileID: 1417167294}
+  talking: {fileID: 21300000, guid: 29850bf0537424430863a8228a34ef86, type: 3}
+  notTalking: {fileID: 21300000, guid: e0026740d53f84ad99d1fce125b08740, type: 3}
   yellowHit: {fileID: 1101317301}
   redHit: {fileID: 302232657}
   blueHit: {fileID: 1317564888}
@@ -2100,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 962.1101, y: 473}
+  m_AnchoredPosition: {x: 821, y: 473}
   m_SizeDelta: {x: 386.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194263891
@@ -2123,7 +2126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'G: 8%
+  m_text: 'Goomba: 8%
 
 '
   m_isRightToLeft: 0
@@ -2321,7 +2324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 490}
+  m_AnchoredPosition: {x: -604, y: 490}
   m_SizeDelta: {x: 209.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298597161
@@ -2553,7 +2556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -306.62, y: 473}
+  m_AnchoredPosition: {x: 254, y: 473}
   m_SizeDelta: {x: 386.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375778411
@@ -2576,7 +2579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'R: 16%'
+  m_text: 'Cheep: 16%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6603ae3466af4311844616399ba9629, type: 2}
   m_sharedMaterial: {fileID: -8927709690502503578, guid: f6603ae3466af4311844616399ba9629, type: 2}
